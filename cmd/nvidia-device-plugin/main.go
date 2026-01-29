@@ -70,6 +70,12 @@ func main() {
 			Usage:   "fail the plugin if an error is encountered during initialization, otherwise block indefinitely",
 			EnvVars: []string{"FAIL_ON_INIT_ERROR"},
 		},
+		&cli.BoolFlag{
+    		Name:    "require-gpu-request",
+    		Value:   false,
+    		Usage:   "require explicit nvidia.com/gpu requests; fail startup if GPUs would otherwise be exposed implicitly",
+    		EnvVars: []string{"REQUIRE_GPU_REQUEST"},
+		},
 		&cli.StringFlag{
 			Name:    "driver-root",
 			Aliases: []string{"nvidia-driver-root"},
